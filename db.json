@@ -1,16 +1,3 @@
 {
-  "bookmarks": [
-    {
-      "title": "Lamberson",
-      "url": "https://www.lamberson.com",
-      "intro": "Personal Website",
-      "id": 1
-    },
-    {
-      "title": "Youtube",
-      "url": "https://www.youtube.com",
-      "intro": "Video sharing website.",
-      "id": 2
-    }
-  ]
+  "bookmarks": []
 }

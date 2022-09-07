@@ -23,7 +23,7 @@
         <td>
           {{bookmark.intro}}
         </td>
-        <td><button class="btn btn-sm btn-danger">Sil</button></td>
+        <td><button class="btn btn-sm btn-danger" @click="deleteBookmark(bookmark)">Sil</button></td>
       </tr>
 
       </tbody>
@@ -46,6 +46,16 @@ export default {
       this.bookmarkList = bookmarks_list_response.data ||[]
       console.log(bookmarks_list_response)
     })
+  },
+  methods: {
+    deleteBookmark(bookmark) {
+      this.$appAxios.delete(`/bookmarks/${bookmark.id}`).then(delete_response => {
+        console.log(delete_response)
+        if(delete_response===200){
+          this.bookmarkList = this.bookmarkList.filter(b => b.id != bookmark.id)
+        }
+      })
+    }
   }
 }
 
